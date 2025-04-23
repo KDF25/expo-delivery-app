@@ -1,10 +1,8 @@
 import { Injectable, NotFoundException } from "@nestjs/common"
 import { PrismaService } from "src/prisma.service"
-import { returnCategoryObject } from "./return-category.object"
-import { get } from "http"
-import { CategoryDto } from "./dto/category.dto"
 import { generateSlug } from "src/utils/generate-slug"
-import { NotFoundError } from "rxjs"
+import { CategoryDto } from "./dto/category.dto"
+import { returnCategoryObject } from "./return-category.object"
 
 @Injectable()
 export class CategoryService {

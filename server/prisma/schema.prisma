@@ -41,7 +41,7 @@ model Product {
   slug        String @unique
   description String
   price       Int
-  imagePath   String
+  image       String
 
   category   Category? @relation(fields: [categoryId], references: [id])
   categoryId String?
