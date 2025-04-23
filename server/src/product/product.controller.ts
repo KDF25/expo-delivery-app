@@ -13,7 +13,7 @@ import {
 } from "@nestjs/common"
 import { ProductService } from "./product.service"
 import { ProductDto } from "./dto/product.dto"
-import { Auth } from "src/auth/decorators/auth.decorators"
+import { Auth } from "src/auth/decorators/auth.decorator"
 
 @Controller("products")
 export class ProductController {
