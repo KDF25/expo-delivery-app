@@ -1,11 +1,11 @@
-import { FC } from 'react'
-import { Pressable, Text, View } from 'react-native'
+import { FC } from "react";
+import { Pressable, Text, View } from "react-native";
 
-import { ENUM_APP_ROUTES } from '@/shared/config'
-import { useTypedNavigation } from '@/shared/hooks'
+import { ENUM_APP_ROUTES } from "@/shared/config";
+import { useTypedNavigation } from "@/shared/hooks";
 
 export const Auth: FC = () => {
-	const { navigate } = useTypedNavigation()
+	const { navigate } = useTypedNavigation();
 	return (
 		<View>
 			<Text>auth</Text>
@@ -13,5 +13,5 @@ export const Auth: FC = () => {
 				<Text>Go home</Text>
 			</Pressable>
 		</View>
-	)
-}
+	);
+};

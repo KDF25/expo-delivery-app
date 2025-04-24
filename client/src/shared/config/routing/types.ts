@@ -1,11 +1,11 @@
 import { ComponentType } from "react";
 
 export type TypeRootStackParamList = {
-    Auth: undefined;
-    Home: undefined;
-}
+	Auth: undefined;
+	Home: undefined;
+};
 
 export interface IRoute {
-    name: keyof TypeRootStackParamList;
-    component: ComponentType<any>;
+	name: keyof TypeRootStackParamList;
+	component: ComponentType<any>;
 }

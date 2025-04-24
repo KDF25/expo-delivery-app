@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import { Text } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-
+import "./src/shared/styles/global.css"
 import { Navigation } from '@/shared/app'
 
 export default function App() {
