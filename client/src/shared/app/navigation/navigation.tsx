@@ -1,26 +1,38 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { FC } from "react";
-import { Text } from "react-native";
+import { useNavigationContainerRef } from "@react-navigation/native";
+import { FC, useEffect, useState } from "react";
 
-import { APP_ROUTES_LIST, TypeRootStackParamList } from "@/shared/config";
+import { useAuth } from "@/shared/hooks";
 
-const Stack = createNativeStackNavigator<TypeRootStackParamList>();
+import { ScreenNavigation } from "./screen-navigation";
+import { TabNavigation } from "./tab-navigation";
 
 export const Navigation: FC = () => {
+	const { user } = useAuth();
+	const [currentRoute, setCurrentRoute] = useState<string | undefined>(
+		undefined
+	);
+	const navRef = useNavigationContainerRef();
+
+	useEffect(() => {
+		setCurrentRoute(navRef.getCurrentRoute()?.name);
+
+		const lister = navRef.addListener("state", () => {
+			setCurrentRoute(navRef.getCurrentRoute()?.name);
+		});
+		return () => {
+			navRef.removeListener("state", lister);
+		};
+	}, []);
+
 	return (
-		<NavigationContainer>
-			<Stack.Navigator
-				screenOptions={{
-					// headerShown: false,
-					contentStyle: { backgroundColor: "#FFF" },
-					animation: "slide_from_right"
-				}}
-			>
-				{APP_ROUTES_LIST.map((route) => (
-					<Stack.Screen key={route.name} {...route} />
-				))}
-			</Stack.Navigator>
-		</NavigationContainer>
+		<>
+			<ScreenNavigation user={user} ref={navRef} />
+			{user && (
+				<TabNavigation
+					currentRoute={currentRoute}
+					nav={navRef.navigate}
+				/>
+			)}
+		</>
 	);
 };
