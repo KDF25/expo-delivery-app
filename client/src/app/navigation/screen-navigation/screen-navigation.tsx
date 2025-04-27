@@ -2,13 +2,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { forwardRef } from "react";
 
+import { Auth } from "@/screens/auth";
+
 import {
 	APP_PRIVATE_ROUTES_LIST,
 	ENUM_APP_ROUTES,
 	TypeRootStackParamList
-} from "@/shared/config";
-
-import { Auth } from "@/screens/auth";
+} from "../routes";
 
 const Stack = createNativeStackNavigator<TypeRootStackParamList>();
 
