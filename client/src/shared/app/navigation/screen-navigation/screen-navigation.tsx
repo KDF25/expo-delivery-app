@@ -1,7 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { forwardRef } from "react";
-import { SafeAreaView } from "react-native";
 
 import {
 	APP_PRIVATE_ROUTES_LIST,
@@ -11,16 +10,14 @@ import {
 
 import { Auth } from "@/screens/auth";
 
-import { TypedUserState } from "../../providers";
-
 const Stack = createNativeStackNavigator<TypeRootStackParamList>();
 
 interface IScreenNavigationProps {
-	user: TypedUserState;
+	isAuth: boolean;
 }
 
 export const ScreenNavigation = forwardRef<any, IScreenNavigationProps>(
-	({ user }, ref) => {
+	({ isAuth }, ref) => {
 		return (
 			<NavigationContainer ref={ref}>
 				<Stack.Navigator
@@ -30,7 +27,7 @@ export const ScreenNavigation = forwardRef<any, IScreenNavigationProps>(
 						animation: "slide_from_right"
 					}}
 				>
-					{user ? (
+					{isAuth ? (
 						<>
 							{APP_PRIVATE_ROUTES_LIST.map((route) => (
 								<Stack.Screen key={route.name} {...route} />

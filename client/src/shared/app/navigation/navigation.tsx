@@ -1,7 +1,7 @@
 import { useNavigationContainerRef } from "@react-navigation/native";
 import { FC, useEffect, useState } from "react";
 
-import { useAuth } from "@/shared/hooks";
+import { useAuth, useCheckAuth } from "@/shared/hooks";
 
 import { ScreenNavigation } from "./screen-navigation";
 import { TabNavigation } from "./tab-navigation";
@@ -24,10 +24,12 @@ export const Navigation: FC = () => {
 		};
 	}, []);
 
+	useCheckAuth(currentRoute);
+
 	return (
 		<>
-			<ScreenNavigation user={user} ref={navRef} />
-			{user && (
+			<ScreenNavigation isAuth={!!user} ref={navRef} />
+			{!!user && currentRoute && (
 				<TabNavigation
 					currentRoute={currentRoute}
 					nav={navRef.navigate}

@@ -9,13 +9,14 @@ import {
 	useState
 } from "react";
 
+import { getAccessToken, getUserFromStorage } from "@/entities/auth";
 import { IUser } from "@/entities/user";
 
-export type TypedUserState = IUser | null;
+export type TypeUserState = IUser | null;
 
 interface IAuthContext {
-	user: TypedUserState;
-	setUser: Dispatch<SetStateAction<TypedUserState>>;
+	user: TypeUserState;
+	setUser: Dispatch<SetStateAction<TypeUserState>>;
 }
 
 export const AuthContext = createContext<IAuthContext>({} as IAuthContext);
@@ -23,15 +24,22 @@ export const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 let ignore = SplashScreen.preventAutoHideAsync();
 
 export const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
-	const [user, setUser] = useState<TypedUserState>({} as IUser);
+	const [user, setUser] = useState<TypeUserState>(null);
 
 	useEffect(() => {
-		let mounted = true;
+		let isMounted = true;
 
 		const checkAccessToken = async () => {
 			try {
-			} catch (e) {
-				console.log(e);
+				const accessToken = await getAccessToken();
+
+				if (accessToken) {
+					const user = await getUserFromStorage();
+					if (isMounted) {
+						setUser(user);
+					}
+				}
+			} catch {
 			} finally {
 				await SplashScreen.hideAsync();
 			}
@@ -40,7 +48,7 @@ export const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 		let ignore = checkAccessToken();
 
 		return () => {
-			mounted = false;
+			isMounted = false;
 		};
 	}, []);
 

@@ -13,6 +13,9 @@ module.exports = function (api) {
           rootPathPrefix: '@/',
         },
       ],
+      [
+        'inline-dotenv',
+      ]
     ],
   };
 };
