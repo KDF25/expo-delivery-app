@@ -1,7 +1,8 @@
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import Toast from "react-native-toast-message";
 
-import { errorCatch } from "./error.api";
+import { errorCatch } from "@/shared/utils";
+
 import instance from "./interceptors.api";
 
 export const request = async <T>(config: AxiosRequestConfig) => {

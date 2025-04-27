@@ -1,10 +1,9 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import { request } from "@/shared/api";
-
 import { ENUM_ASYNC_STORAGE, ENUM_AUTH_TYPE, IAuthResponse } from "../types";
 
 import { deleteTokensStorage, saveUserToStorage } from "./auth.helper";
+import { request } from "./request.api";
 
 export const AuthService = {
 	async main(type: ENUM_AUTH_TYPE, email: string, password: string) {

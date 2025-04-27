@@ -1,14 +1,13 @@
 import axios from "axios";
 
+import { SERVER_URL } from "@/shared/config";
+import { errorCatch } from "@/shared/utils";
+
 import {
 	deleteTokensStorage,
 	getAccessToken,
 	getNewTokens
-} from "@/entities/auth";
-
-import { SERVER_URL } from "../config";
-
-import { errorCatch } from "./error.api";
+} from "./auth.helper";
 
 const instance = axios.create({
 	baseURL: SERVER_URL,

@@ -8,7 +8,7 @@ import {
 	getNewTokens
 } from "@/entities/auth";
 
-import { errorCatch } from "../api";
+import { errorCatch } from "../utils";
 
 import { useAuth } from "./useAuth";
 
