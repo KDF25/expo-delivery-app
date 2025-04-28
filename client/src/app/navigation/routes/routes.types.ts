@@ -10,6 +10,10 @@ export type TypeRootStackParamList = {
 	Search: undefined;
 	Explorer: undefined;
 	Profile: undefined;
+	Cart: undefined;
+	Category: {
+		slug: string;
+	};
 };
 
 export interface IRoute {

@@ -1,6 +1,7 @@
 import cn from "clsx";
 import { FC, PropsWithChildren } from "react";
-import { ScrollView, View } from "react-native";
+import { ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface ILayout {
 	className?: string;
@@ -11,10 +12,10 @@ export const Layout: FC<PropsWithChildren<ILayout>> = ({
 	className
 }) => {
 	return (
-		<View className={cn("h-full w-full bg-white mt-12 px-4", className)}>
+		<SafeAreaView className={cn("h-full w-full  px-4", className)}>
 			<ScrollView showsVerticalScrollIndicator={false}>
 				{children}
 			</ScrollView>
-		</View>
+		</SafeAreaView>
 	);
 };

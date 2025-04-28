@@ -4,5 +4,7 @@ export enum ENUM_APP_ROUTES {
 	FAVORITES = "Favorites",
 	SEARCH = "Search",
 	PROFILE = "Profile",
-	EXPLORER = "Explorer"
+	EXPLORER = "Explorer",
+	CART = "Cart",
+	CATEGORY = "Category"
 }

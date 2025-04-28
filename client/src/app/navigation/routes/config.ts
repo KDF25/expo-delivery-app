@@ -1,10 +1,13 @@
+import { ENUM_APP_ROUTES } from "@/shared/config";
+
+import { Cart } from "@/screens/cart";
+import { Category } from "@/screens/category";
 import { Explorer } from "@/screens/explorer";
 import { Favorites } from "@/screens/favorites";
 import { Home } from "@/screens/home";
 import { Profile } from "@/screens/profile";
 import { Search } from "@/screens/search";
 
-import { ENUM_APP_ROUTES } from "./routes.enum";
 import { IRoute, ITabItem } from "./routes.types";
 
 export const APP_PRIVATE_ROUTES_LIST: IRoute[] = [
@@ -27,6 +30,14 @@ export const APP_PRIVATE_ROUTES_LIST: IRoute[] = [
 	{
 		name: ENUM_APP_ROUTES.EXPLORER,
 		component: Explorer
+	},
+	{
+		name: ENUM_APP_ROUTES.CART,
+		component: Cart
+	},
+	{
+		name: ENUM_APP_ROUTES.CATEGORY,
+		component: Category
 	}
 ];
 

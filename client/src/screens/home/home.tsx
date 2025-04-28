@@ -1,10 +1,16 @@
 import { FC } from "react";
-import { Text, View } from "react-native";
+
+import { Banner, Header } from "@/shared/ui";
+
+import { Categories } from "@/widgets/categories";
+import { Layout } from "@/widgets/layout";
 
 export const Home: FC = () => {
 	return (
-		<View>
-			<Text> Home</Text>
-		</View>
+		<Layout>
+			<Header />
+			<Banner />
+			<Categories />
+		</Layout>
 	);
 };
