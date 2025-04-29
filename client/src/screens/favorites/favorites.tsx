@@ -1,10 +1,19 @@
 import { FC } from "react";
-import { Text, View } from "react-native";
+
+import { useProfile } from "@/entities/user";
+
+import { Layout } from "@/widgets/layout";
+import { ProductsList } from "@/widgets/products-list";
 
 export const Favorites: FC = () => {
+	const { profile } = useProfile();
+
 	return (
-		<View>
-			<Text> Favorites</Text>
-		</View>
+		<Layout>
+			<ProductsList
+				title="Favorites"
+				products={profile?.favorites || []}
+			/>
+		</Layout>
 	);
 };

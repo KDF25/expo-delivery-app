@@ -2,9 +2,7 @@ import { Feather } from "@expo/vector-icons";
 import { FC } from "react";
 import { Pressable } from "react-native";
 
-import { COLORS } from "@/shared/config";
-
-import { ITabItem, TypeNavigate } from "../routes";
+import { COLORS, ITabItem, TypeNavigate } from "@/shared/config";
 
 interface ITabItemProps {
 	item: ITabItem;

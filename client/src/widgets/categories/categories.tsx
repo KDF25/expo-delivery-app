@@ -3,16 +3,16 @@ import { View } from "react-native";
 
 import { Heading, Loader } from "@/shared/ui";
 
-import { useCategory } from "@/entities/category";
+import { useGetCategories } from "@/entities/category";
 
 import { CategoryCard } from "@/features/category-card";
 
 export const Categories: FC = () => {
-	const { categories, isLoading } = useCategory();
+	const { categories, isLoading } = useGetCategories();
 
-	return isLoading ? (
-		<Loader />
-	) : (
+	if (isLoading) return <Loader />;
+
+	return (
 		<View className="flex flex-col mt-5 mb-4">
 			<Heading>Categories</Heading>
 

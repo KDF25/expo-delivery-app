@@ -11,7 +11,7 @@ export const CategoryService = {
 	},
 
 	async getCategoryBySlug(slug: string) {
-		return request<ICategory[]>({
+		return request<ICategory>({
 			url: `/categories/by-slug/${slug}`,
 			method: "GET"
 		});

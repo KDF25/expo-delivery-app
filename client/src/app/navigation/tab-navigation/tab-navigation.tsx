@@ -2,7 +2,9 @@ import { FC } from "react";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { APP_TABS_ROUTES_LIST, TypeNavigate } from "../routes";
+import { TypeNavigate } from "@/shared/config";
+
+import { APP_TABS_ROUTES_LIST } from "../routes";
 
 import { TabItem } from "./tab-item";
 

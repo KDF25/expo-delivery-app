@@ -1,15 +1,30 @@
 import { useQuery } from "@tanstack/react-query";
 
+import { useTypedRoute } from "@/shared/hooks";
+
+import { ProductService } from "@/entities/product";
+
 import { CategoryService } from "../api";
 
 export const useCategory = () => {
-	const { data: categories, isLoading } = useQuery({
-		queryKey: ["get categories"],
-		queryFn: () => CategoryService.getAll(),
-		select: (data) => {
-			return data;
-		}
+	const { params } = useTypedRoute<"Category">();
+
+	const { isLoading: isCategoryLoading, data: category } = useQuery({
+		queryKey: ["get category by slug", params.slug],
+		queryFn: () => CategoryService.getCategoryBySlug(params.slug)
 	});
 
-	return { categories, isLoading };
+	const categoryId = category?.id || "";
+
+	const { isLoading: isProductLoading, data: products } = useQuery({
+		queryKey: ["get products by category", params.slug],
+		queryFn: () => ProductService.getProductByCategorySlug(params.slug),
+		enabled: !!categoryId
+	});
+
+	return {
+		category,
+		products,
+		isLoading: isCategoryLoading || isProductLoading
+	};
 };

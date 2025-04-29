@@ -1,4 +1,4 @@
-import { ENUM_APP_ROUTES } from "@/shared/config";
+import { ENUM_APP_ROUTES, IRoute, ITabItem } from "@/shared/config";
 
 import { Cart } from "@/screens/cart";
 import { Category } from "@/screens/category";
@@ -7,8 +7,6 @@ import { Favorites } from "@/screens/favorites";
 import { Home } from "@/screens/home";
 import { Profile } from "@/screens/profile";
 import { Search } from "@/screens/search";
-
-import { IRoute, ITabItem } from "./routes.types";
 
 export const APP_PRIVATE_ROUTES_LIST: IRoute[] = [
 	{
