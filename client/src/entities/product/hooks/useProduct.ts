@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { ENUM_APP_ROUTES } from "@/shared/config";
+import { ENUM_APP_ROUTES, ENUM_QUERY_TAGS } from "@/shared/config";
 import { useTypedRoute } from "@/shared/hooks";
 
 import { ProductService } from "../api";
@@ -9,7 +9,7 @@ export const useProduct = () => {
 	const { params } = useTypedRoute<ENUM_APP_ROUTES.PRODUCT>();
 
 	const { isLoading, data: product } = useQuery({
-		queryKey: ["get product by slug", params?.slug],
+		queryKey: [ENUM_QUERY_TAGS.GET_PRODUCT_BY_SLUG, params?.slug],
 		queryFn: () => ProductService.getProductBySlug(params?.slug)
 	});
 

@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
+import { ENUM_QUERY_TAGS } from "@/shared/config";
 import { useTypedRoute } from "@/shared/hooks";
 
 import { ProductService } from "@/entities/product";
@@ -10,14 +11,14 @@ export const useCategory = () => {
 	const { params } = useTypedRoute<"Category">();
 
 	const { isLoading: isCategoryLoading, data: category } = useQuery({
-		queryKey: ["get category by slug", params.slug],
+		queryKey: [ENUM_QUERY_TAGS.GET_CATEGORY_BY_SLUG, params.slug],
 		queryFn: () => CategoryService.getCategoryBySlug(params.slug)
 	});
 
 	const categoryId = category?.id || "";
 
 	const { isLoading: isProductLoading, data: products } = useQuery({
-		queryKey: ["get products by category", params.slug],
+		queryKey: [ENUM_QUERY_TAGS.GET_PRODUCTS_BY_CATEGORY_SLUG, params.slug],
 		queryFn: () => ProductService.getProductByCategorySlug(params.slug),
 		enabled: !!categoryId
 	});

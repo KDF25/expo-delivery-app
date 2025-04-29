@@ -1,10 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 
+import { ENUM_QUERY_TAGS } from "@/shared/config";
+
 import { ProductService } from "../api";
 
 export const useGetProducts = (elementsCount?: number) => {
 	const { data, isLoading } = useQuery({
-		queryKey: ["get products"],
+		queryKey: [ENUM_QUERY_TAGS.GET_PRODUCTS],
 		queryFn: () => ProductService.getAll(),
 		select: (data) => data
 	});
