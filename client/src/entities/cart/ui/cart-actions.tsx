@@ -2,10 +2,10 @@ import { AntDesign } from "@expo/vector-icons";
 import { FC } from "react";
 import { Pressable, Text, View } from "react-native";
 
+import { useActions } from "@/entities/store/hooks/useActions";
 
 import { useCart } from "../hooks";
 import { ENUM_CHANGE_QUANTITY, ICartItem } from "../types";
-import { useActions } from "@/entities/store";
 
 interface ICartActions {
 	item: ICartItem;

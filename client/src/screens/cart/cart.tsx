@@ -4,7 +4,7 @@ import { Text, View } from "react-native";
 import { Button, Heading } from "@/shared/ui";
 import { convertPrice } from "@/shared/utils";
 
-import { useCart } from "@/entities/cart";
+import { useCart, useCheckout } from "@/entities/cart";
 
 import { CartItem } from "@/features/cart-card";
 
@@ -12,6 +12,8 @@ import { Layout } from "@/widgets/layout";
 
 export const Cart: FC = () => {
 	const { items, total } = useCart();
+	const { onCheckout } = useCheckout();
+
 	return (
 		<>
 			<Layout>
@@ -26,12 +28,12 @@ export const Cart: FC = () => {
 				)}
 			</Layout>
 
-			{items.length && (
+			{!!items.length && (
 				<View className="bottom-8 absolute w-[90%] mx-5">
 					<Text className="text-xl font-bold">
 						Total: {convertPrice(total)}
 					</Text>
-					<Button>Place order</Button>
+					<Button onPress={() => onCheckout()}>Place order</Button>
 				</View>
 			)}
 		</>

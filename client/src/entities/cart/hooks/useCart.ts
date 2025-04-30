@@ -1,4 +1,4 @@
-import { useTypedSelector } from "@/entities/store"
+import { useTypedSelector } from "@/entities/store/hooks/useTypedSelector"
 
 export const useCart = () => {
 	const items = useTypedSelector(state => state.cart.items)

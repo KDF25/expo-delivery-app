@@ -8,5 +8,7 @@ export enum ENUM_QUERY_TAGS {
 	TOGGLE_FAVORITE = "toggleFavorite",
 
 	GET_PROFILE = "getProfile",
-	SEARCH_PRODUCTS = "searchProducts"
+	SEARCH_PRODUCTS = "searchProducts",
+
+	PLACE_ORDER = "placeOrder"
 }

@@ -7,5 +7,6 @@ export enum ENUM_APP_ROUTES {
 	EXPLORER = "Explorer",
 	CART = "Cart",
 	CATEGORY = "Category",
-	PRODUCT = "Product"
+	PRODUCT = "Product",
+	THANKS = "Thanks",
 }
