@@ -18,12 +18,14 @@ export const CategoryCard: FC<ICategoryCardProps> = ({ card }) => {
 			onPress={() =>
 				navigate(ENUM_APP_ROUTES.CATEGORY, { slug: card?.slug })
 			}
-			className="p-5 mx-2 bg-gray-100 rounded-xl"
+			className="p-5 mx-2 bg-gray-100 rounded-xl min-w-[100px] items-center justify-center"
 		>
 			<Image
 				source={{ uri: card?.image }}
-				className="w-10 h-8 p-3 mb-2"
-				style={{ resizeMode: "cover" }}
+				className="mb-2"
+				// style={{ resizeMode: "cover" }}
+				width={40}
+				height={40}
 			/>
 			<Text className="text-xs font-normal text-center">
 				{card?.name}

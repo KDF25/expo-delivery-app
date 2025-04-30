@@ -12,7 +12,10 @@ export const Layout: FC<PropsWithChildren<ILayout>> = ({
 	className
 }) => {
 	return (
-		<SafeAreaView className={cn("h-full w-full  px-4", className)}>
+		<SafeAreaView
+			edges={["top", "left", "right"]}
+			className={cn("h-full w-full  px-4 bg-white", className)}
+		>
 			<ScrollView showsVerticalScrollIndicator={false}>
 				{children}
 			</ScrollView>
