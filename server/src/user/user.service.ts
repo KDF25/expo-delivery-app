@@ -1,8 +1,9 @@
 import { Injectable, NotFoundException } from "@nestjs/common"
-import { Prisma } from "@prisma/client"
+import { Prisma, User } from "@prisma/client"
 import { PrismaService } from "src/prisma.service"
 import { returnProductObject } from "src/product/return-product.object"
 import { returnUserObject } from "./return-user.object"
+import { UserDto } from "./dto/user.dto"
 
 @Injectable()
 export class UserService {
@@ -27,6 +28,17 @@ export class UserService {
 		}
 
 		return user
+	}
+
+	async updateProfile(id: string, dto: UserDto) {
+		return this.prisma.user.update({
+			where: {
+				id,
+			},
+			data: {
+				...dto,
+			},
+		})
 	}
 
 	async toggleFavorite(userId: string, productId: string) {
