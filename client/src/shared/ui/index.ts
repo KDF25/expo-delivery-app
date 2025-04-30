@@ -5,3 +5,4 @@ export * from "./toast";
 export * from "./heading";
 export * from "./header";
 export * from "./banner";
+export * from "./go-to-cart";

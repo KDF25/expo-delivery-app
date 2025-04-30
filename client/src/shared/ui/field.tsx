@@ -37,8 +37,8 @@ export const Field = <T extends Record<string, any>>({
 				<>
 					<View
 						className={cn(
-							"bg-white w-full rounded-lg pb-4 pt-2.5 px-4 my-1 border",
-							error ? "border-red-500" : "border-gray-400"
+							"w-full rounded-xl px-4 py-2 border shadow-sm bg-gray-50 ",
+							error ? "border-red-500" : "border-gray-300"
 						)}
 					>
 						<TextInput
@@ -46,14 +46,17 @@ export const Field = <T extends Record<string, any>>({
 							onChangeText={onChange}
 							onBlur={onBlur}
 							value={(value || "").toString()}
-							className="text-black text-base"
-							placeholderTextColor="#6a6a6a"
+							className={cn(
+								"text-base pb-3",
+								rest.editable ? " text-black" : "text-gray-500"
+							)}
+							placeholderTextColor="#9ca3af"
 							{...rest}
 						/>
 						{children}
 					</View>
 					{error && (
-						<Text className="text-red-500 text-sm mt-1">
+						<Text className="mt-1 ml-1 text-sm text-red-500">
 							{error.message}
 						</Text>
 					)}

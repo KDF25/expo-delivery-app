@@ -1,12 +1,11 @@
 import { FC } from "react";
 import { Image, View } from "react-native";
 
-import { Loader } from "@/shared/ui";
+import { GoToCart, Loader } from "@/shared/ui";
 
 import { ProductPageInfo, useProduct } from "@/entities/product";
 
 import { AddToCart } from "@/features/add-to-cart";
-import { GoToCart } from "@/features/go-to-cart";
 
 import { Layout } from "@/widgets/layout";
 import { ProductHeader } from "@/widgets/product-header";
@@ -36,9 +35,13 @@ export const Product: FC = () => {
 				</View>
 				<ProductPageInfo product={product} />
 			</Layout>
-			<View className="absolute flex-row justify-between px-4 mx-5 bottom-8 w-[75%] gap-5">
-				<AddToCart product={product} className="mt-6" />
-				<GoToCart className="mt-6 bg-yellow-400 w-[50px]" />
+			<View className="absolute flex-row items-center justify-between gap-5 px-4 mx-5 bottom-8">
+				<AddToCart
+					product={product}
+					className="w-full mt-6"
+					style={{ flexGrow: 1, flexBasis: 100 }}
+				/>
+				<GoToCart className="mt-6 bg-yellow-400 w-[45px]" />
 			</View>
 		</>
 	);

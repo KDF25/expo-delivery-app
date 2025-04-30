@@ -1,6 +1,7 @@
 import { FC } from "react";
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 
+import { IMAGES } from "@/shared/assets";
 import { Button, Heading } from "@/shared/ui";
 import { convertPrice } from "@/shared/utils";
 
@@ -24,7 +25,16 @@ export const Cart: FC = () => {
 						<CartItem key={item.id + item.product.id} item={item} />
 					))
 				) : (
-					<Text className="mt-2">Cart is empty</Text>
+					// <Text className="mt-2">Cart is empty</Text>
+					<View className="items-center justify-center flex-1">
+						<Image
+							source={IMAGES.box}
+							style={{ width: 100, height: 100 }}
+						/>
+						<Text className="mt-2 font-semibold">
+							Cart is empty
+						</Text>
+					</View>
 				)}
 			</Layout>
 

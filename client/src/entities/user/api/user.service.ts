@@ -1,12 +1,20 @@
 import { request } from "@/entities/auth";
 
-import { IUser } from "../types";
+import { IProfileFormData, IUser } from "../types";
 
 export const UserService = {
 	async getProfile() {
 		return request<IUser>({
 			url: "/users/profile",
 			method: "GET"
+		});
+	},
+
+	async updateProfile(profile: IProfileFormData) {
+		return request<IUser>({
+			url: "/users/profile",
+			method: "PATCH",
+			data: profile
 		});
 	},
 

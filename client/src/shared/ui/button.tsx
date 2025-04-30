@@ -14,12 +14,12 @@ export const Button: FC<PropsWithChildren<IButtonProps>> = ({
 	return (
 		<Pressable
 			className={cn(
-				"self-center mt-3.5 bg-primary w-full py-3 font-light rounded-lg",
+				"self-center bg-primary  py-3 font-light rounded-lg",
 				className
 			)}
 			{...rest}
 		>
-			<Text className="text-white text-center font-medium text-lg">
+			<Text className="text-lg font-medium text-center text-white">
 				{children}
 			</Text>
 		</Pressable>
