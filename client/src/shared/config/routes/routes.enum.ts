@@ -8,5 +8,5 @@ export enum ENUM_APP_ROUTES {
 	CART = "Cart",
 	CATEGORY = "Category",
 	PRODUCT = "Product",
-	THANKS = "Thanks",
+	THANKS = "Thanks"
 }

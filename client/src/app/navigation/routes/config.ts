@@ -5,9 +5,9 @@ import { Category } from "@/screens/category";
 import { Explorer } from "@/screens/explorer";
 import { Favorites } from "@/screens/favorites";
 import { Home } from "@/screens/home";
+import { Product } from "@/screens/product";
 import { Profile } from "@/screens/profile";
 import { Search } from "@/screens/search";
-import { Product } from "@/screens/product";
 import { Thanks } from "@/screens/thanks";
 
 export const APP_PRIVATE_ROUTES_LIST: IRoute[] = [

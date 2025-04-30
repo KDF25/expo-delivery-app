@@ -51,10 +51,8 @@ export const getNewTokens = async () => {
 		const refreshToken = await getItemAsync(
 			ENUM_SECURE_STORE.REFRESH_TOKEN
 		);
-		if (!refreshToken) return null;
-
 		const response = await axios.post<string, { data: IAuthResponse }>(
-			SERVER_URL + "/auth/login",
+			SERVER_URL + "/auth/login/access-token",
 			{ refreshToken },
 			{
 				headers: {
@@ -62,9 +60,8 @@ export const getNewTokens = async () => {
 				}
 			}
 		);
-		if (response.data.accessToken) {
-			await saveTokensStorage(response.data);
-		}
+		if (response.data.accessToken) await saveTokensStorage(response.data);
+
 		return response;
-	} catch (error) {}
+	} catch (e) {}
 };
