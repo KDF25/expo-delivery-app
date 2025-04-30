@@ -18,14 +18,18 @@ export const Cart: FC = () => {
 	return (
 		<>
 			<Layout>
-				<Heading>Cart</Heading>
+				<Heading className="mb-5">Cart</Heading>
 
 				{items?.length ? (
-					items.map((item) => (
-						<CartItem key={item.id + item.product.id} item={item} />
-					))
+					<View className="flex-col gap-4">
+						{items.map((item) => (
+							<CartItem
+								key={item.id + item.product.id}
+								item={item}
+							/>
+						))}
+					</View>
 				) : (
-					// <Text className="mt-2">Cart is empty</Text>
 					<View className="items-center justify-center flex-1">
 						<Image
 							source={IMAGES.box}
@@ -40,10 +44,12 @@ export const Cart: FC = () => {
 
 			{!!items.length && (
 				<View className="bottom-8 absolute w-[90%] mx-5">
-					<Text className="text-xl font-bold">
+					<Text className="mb-3 text-xl font-bold">
 						Total: {convertPrice(total)}
 					</Text>
-					<Button onPress={() => onCheckout()}>Place order</Button>
+					<Button onPress={() => onCheckout()} className="w-full">
+						Place order
+					</Button>
 				</View>
 			)}
 		</>

@@ -4,7 +4,7 @@ import { Image, Pressable, Text, View } from "react-native";
 import { useTypedNavigation } from "@/shared/hooks";
 import { convertPrice } from "@/shared/utils";
 
-import { CartActions, ICartItem } from "@/entities/cart";
+import { CartActions, CartItemDelete, ICartItem } from "@/entities/cart";
 
 interface ICartItemProps {
 	item: ICartItem;
@@ -14,7 +14,7 @@ export const CartItem: FC<ICartItemProps> = ({ item }) => {
 	const { navigate } = useTypedNavigation();
 
 	return (
-		<View className="flex-row mt-5">
+		<View className="flex-row items-center gap-4">
 			<Pressable
 				onPress={() => navigate("Product", { slug: item.product.slug })}
 				className="items-center px-3 py-3 overflow-hidden bg-gray-100 rounded-xl w-28"
@@ -26,13 +26,14 @@ export const CartItem: FC<ICartItemProps> = ({ item }) => {
 				/>
 			</Pressable>
 
-			<View className="mt-2 ml-5">
-				<Text className="text-xl font-semibold">
+			<View>
+				<Text className="mb-1 text-xl font-semibold">
 					{item.product.name}
 				</Text>
-				<Text className="mt-1">{convertPrice(item.price)}</Text>
+				<Text>{convertPrice(item.price)}</Text>
 				<CartActions item={item} />
 			</View>
+			<CartItemDelete item={item} />
 		</View>
 	);
 };

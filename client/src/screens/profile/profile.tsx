@@ -60,12 +60,14 @@ export const Profile: FC = () => {
 
 			{!isEdit ? (
 				<View className="justify-between flex-1 mt-4 mb-8 gap-y-5">
-					<Button onPress={() => setIsEdit(true)}>Edit</Button>
+					<Button onPress={() => setIsEdit(true)} className="w-full">
+						Edit
+					</Button>
 					<Button
 						onPress={() =>
 							AuthService.logout().then(() => setUser(null))
 						}
-						className="bg-red-600 "
+						className="w-full bg-red-600"
 					>
 						Logout
 					</Button>
