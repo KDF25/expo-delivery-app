@@ -64,9 +64,10 @@ export class AuthService {
 		const user = await this.prisma.user.create({
 			data: {
 				email: dto.email,
-				name: faker.person.firstName(),
-				avatarPath: faker.image.avatar(),
-				phone: faker.phone.number(),
+				name: "User",
+				avatarPath:
+					"https://res.cloudinary.com/djav6p4wl/image/upload/avatar_bc1iah",
+				phone: "",
 				password: await hash(dto.password),
 			},
 		})
