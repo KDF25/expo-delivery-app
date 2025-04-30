@@ -8,9 +8,10 @@ import { useActions } from "@/entities/store";
 
 interface IAddToCartProps {
 	product: IProduct;
+	className?: string;
 }
 
-export const AddToCart: FC<IAddToCartProps> = ({ product }) => {
+export const AddToCart: FC<IAddToCartProps> = ({ product, className }) => {
 	const { addToCart, removeFromCart } = useActions();
 	const { items } = useCart();
 
@@ -29,7 +30,7 @@ export const AddToCart: FC<IAddToCartProps> = ({ product }) => {
 							price: product.price
 						})
 			}
-			className="mt-6"
+			className={className}
 		>
 			{currentElement ? "Remove from cart" : "Add to cart"}
 		</Button>

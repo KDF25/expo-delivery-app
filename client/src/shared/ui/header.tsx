@@ -4,6 +4,8 @@ import { Pressable, Text, View } from "react-native";
 
 import { useProfile } from "@/entities/user";
 
+import { GoToCart } from "@/features/go-to-cart";
+
 import { ENUM_APP_ROUTES } from "../config";
 import { useTypedNavigation } from "../hooks";
 
@@ -17,9 +19,7 @@ export const Header: FC = () => {
 				Hello, {profile?.name}!
 			</Text>
 
-			<Pressable onPress={() => navigate(ENUM_APP_ROUTES.CART)}>
-				<Ionicons name="cart" size={26} color="#374151" />
-			</Pressable>
+			<GoToCart className="w-[50px] bg-yellow-300" />
 		</View>
 	);
 };

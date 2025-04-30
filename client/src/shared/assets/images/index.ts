@@ -1,5 +1,6 @@
 import adaptiveIcon from "./adaptive-icon.png";
 import banner from "./banner.png";
+import box from "./box.png";
 import favicon from "./favicon.png";
 import icon from "./icon.png";
 import avatar from "./splash.png";
@@ -9,5 +10,6 @@ export const IMAGES = {
 	adaptiveIcon,
 	banner,
 	favicon,
-	icon
+	icon,
+	box
 };

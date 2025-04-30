@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 import { Field, Heading, Loader } from "@/shared/ui";
 
@@ -22,7 +22,7 @@ export const Search: FC = () => {
 				/>
 			</View>
 			{!!searchTerm && (
-				<View className="mt-2">
+				<View className="flex-1 mt-2">
 					{isLoading ? (
 						<Loader />
 					) : (

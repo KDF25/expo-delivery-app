@@ -16,7 +16,10 @@ export const Layout: FC<PropsWithChildren<ILayout>> = ({
 			edges={["top", "left", "right"]}
 			className={cn("h-full w-full  px-4 bg-white", className)}
 		>
-			<ScrollView showsVerticalScrollIndicator={false}>
+			<ScrollView
+				contentContainerStyle={{ flexGrow: 1 }}
+				showsVerticalScrollIndicator={false}
+			>
 				{children}
 			</ScrollView>
 		</SafeAreaView>
