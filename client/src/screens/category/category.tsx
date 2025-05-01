@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 
 import { Loader } from "@/shared/ui";
 
@@ -14,13 +14,15 @@ export const Category: FC = () => {
 	if (isLoading)
 		return (
 			<Layout>
-				<Loader />
+				<View className="items-center justify-center h-full">
+					<Loader />
+				</View>
 			</Layout>
 		);
 
 	return (
 		<Layout>
-			{category ? (
+			{category?.slug ? (
 				<ProductsList
 					title={category?.name}
 					products={products || []}

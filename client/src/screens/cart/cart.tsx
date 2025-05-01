@@ -21,7 +21,7 @@ export const Cart: FC = () => {
 				<Heading className="mb-5">Cart</Heading>
 
 				{items?.length ? (
-					<View className="flex-col gap-4">
+					<View className="flex-col gap-4 mb-10">
 						{items.map((item) => (
 							<CartItem
 								key={item.id + item.product.id}

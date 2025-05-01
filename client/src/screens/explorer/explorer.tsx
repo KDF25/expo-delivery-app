@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { View } from "react-native";
 
 import { Loader } from "@/shared/ui";
 
@@ -13,7 +14,9 @@ export const Explorer: FC = () => {
 	if (isLoading)
 		return (
 			<Layout>
-				<Loader />
+				<View className="items-center justify-center h-full">
+					<Loader />
+				</View>
 			</Layout>
 		);
 

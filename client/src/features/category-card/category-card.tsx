@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Image, Pressable, Text, View } from "react-native";
+import { Image, Pressable, Text } from "react-native";
 
 import { ENUM_APP_ROUTES } from "@/shared/config";
 import { useTypedNavigation } from "@/shared/hooks";
@@ -23,7 +23,6 @@ export const CategoryCard: FC<ICategoryCardProps> = ({ card }) => {
 			<Image
 				source={{ uri: card?.image }}
 				className="mb-2"
-				// style={{ resizeMode: "cover" }}
 				width={40}
 				height={40}
 			/>

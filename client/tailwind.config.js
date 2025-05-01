@@ -2,7 +2,7 @@
 
 const colors = {
 	primary: {
-		DEFAULT: '#47AA52',
+		DEFAULT: '#66B2FF',
 	},
 	black: {
 		DEFAULT: '#000000',

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Control } from "react-hook-form";
-import { Pressable, Text } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
 import { Button, Field } from "@/shared/ui";
 
@@ -23,18 +23,20 @@ export const AuthForm: FC<IAuthFormProps> = ({
 }) => {
 	return (
 		<>
-			{AUTH_FORM_FIELD_LIST.map((field, index) => (
-				<Field<IAuthFormData>
-					key={index}
-					control={control}
-					{...field}
-				/>
-			))}
-			<Button onPress={handleSubmit}>
+			<View className="flex-col mb-5 gap-y-4">
+				{AUTH_FORM_FIELD_LIST.map((field, index) => (
+					<Field<IAuthFormData>
+						key={index}
+						control={control}
+						{...field}
+					/>
+				))}
+			</View>
+			<Button onPress={handleSubmit} className="w-full">
 				{isReg ? "Sign Up" : "Login"}
 			</Button>
 			<Pressable onPress={() => setIsReg(!isReg)}>
-				<Text className="text-center text-black text-base mt-6">
+				<Text className="mt-6 text-base text-center text-black">
 					{isReg
 						? "Already have an account? "
 						: "Don't have an account? "}

@@ -16,7 +16,9 @@ export const Product: FC = () => {
 	if (isLoading)
 		return (
 			<Layout>
-				<Loader />
+				<View className="items-center justify-center h-full">
+					<Loader />
+				</View>
 			</Layout>
 		);
 

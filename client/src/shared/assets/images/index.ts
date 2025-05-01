@@ -3,6 +3,7 @@ import banner from "./banner.png";
 import box from "./box.png";
 import favicon from "./favicon.png";
 import icon from "./icon.png";
+import search from "./search.png";
 import avatar from "./splash.png";
 
 export const IMAGES = {
@@ -11,5 +12,6 @@ export const IMAGES = {
 	banner,
 	favicon,
 	icon,
-	box
+	box,
+	search
 };
