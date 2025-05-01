@@ -14,11 +14,24 @@ Click the link above to see the app in action.
 
 ## 🖼️ Screenshots
 
-<p float="left">
-  <img src="./demo/screen-home.png" width="30%" />
-  <img src="./demo/screen-cart-1.png" width="30%" />
-  <img src="./demo/screen-profile.png" width="30%" />
-</p>
+👉 [See All Screenshots](./demo/)
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./demo/screen-home.png" width="80%"/><br/>
+      <strong>🏠 Home Screen</strong>
+    </td>
+    <td align="center">
+      <img src="./demo/screen-cart-1.png" width="80%"/><br/>
+      <strong>🛒 Cart Screen</strong>
+    </td>
+    <td align="center">
+      <img src="./demo/screen-profile.png" width="80%"/><br/>
+      <strong>👤 Profile Screen</strong>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -42,7 +55,7 @@ Click the link above to see the app in action.
 
 - **Framework:** NestJS
 - **ORM:** Prisma
-- **Database:** PostgreSQL 
+- **Database:** PostgreSQL
 - **Authentication:** JWT + Passport
 - **Encryption:** Argon2
 - **Validation:** class-validator / class-transformer
