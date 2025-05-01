@@ -4,6 +4,24 @@
 
 ---
 
+## 🎥 Live Demo
+
+[▶️ Watch Demo Video](./demo/live-demo.mp4)
+
+Click the link above to see the app in action.
+
+---
+
+## 🖼️ Screenshots
+
+<p float="left">
+  <img src="./demo/screen-home.png" width="30%" />
+  <img src="./demo/screen-cart-1.png" width="30%" />
+  <img src="./demo/screen-profile.png" width="30%" />
+</p>
+
+---
+
 ## 🚀 Tech Stack
 
 ### 📱 Client – React Native (Expo)
